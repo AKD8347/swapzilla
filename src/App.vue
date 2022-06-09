@@ -5,6 +5,7 @@
         <div class="fund-your-acc__navigation">
           <v-tabs v-model="tab">
             <v-tab>Deposit</v-tab>
+            <v-tab>Withdraw</v-tab>
             <v-tab>Rebalance</v-tab>
           </v-tabs>
           <div class="fund-your-acc__exit"></div>
@@ -12,7 +13,8 @@
 
         <transition name="slide-fade" mode="out-in" appear>
           <deposit-tab v-if="tab === 0" />
-          <rebalance-tab v-if="tab === 1" />
+          <withdraw-tab v-if="tab === 1" />
+          <rebalance-tab v-if="tab === 2" />
         </transition>
       </div>
     </div>
@@ -21,11 +23,12 @@
 
 <script>
 import DepositTab from "@/components/tabs/Deposit"
+import WithdrawTab from "@/components/tabs/Withdraw"
 import RebalanceTab from "@/components/tabs/Rebalance"
 
 export default {
   name: "App",
-  components: { DepositTab, RebalanceTab },
+  components: { DepositTab, WithdrawTab, RebalanceTab },
   data() {
     return {
       tab: 0
@@ -122,7 +125,7 @@ export default {
   .withdraw .withdrawСustom .v-text-field__slot::before {
     position: absolute;
     right: 9px;
-    top: 10px;
+    top: 9px;
     content: "max";
     padding: 7px 10px;
     padding-bottom: 9px;
@@ -137,6 +140,25 @@ export default {
     line-height: 16px;
 
     color: #ffffff;
+  }
+
+  .v-input--selection-controls .v-input__slot > .v-label,
+  .v-input--selection-controls .v-radio > .v-label {
+    color: #ffffff;
+  }
+
+  .v-text-field--full-width .v-input__prepend-outer,
+  .v-text-field--full-width .v-input__prepend-inner,
+  .v-text-field--full-width .v-input__append-inner,
+  .v-text-field--full-width .v-input__append-outer,
+  .v-text-field--enclosed .v-input__prepend-outer,
+  .v-text-field--enclosed .v-input__prepend-inner,
+  .v-text-field--enclosed .v-input__append-inner,
+  .v-text-field--enclosed .v-input__append-outer {
+    margin: 0 !important;
+    display: flex;
+    align-items: center;
+    height: 100%;
   }
 
   .deposit .v-text-field--outlined .v-label--active,
@@ -174,7 +196,21 @@ export default {
   }
 
   .v-text-field__slot .theme--light.v-label {
-    padding-left: 12px;
+    padding-left: 18px;
+  }
+
+  .v-text-field.v-text-field--enclosed:not(.v-text-field--rounded)
+  > .v-input__control
+  > .v-input__slot,
+  .v-text-field.v-text-field--enclosed .v-text-field__details {
+    padding: 0px 18px;
+  }
+
+  .theme--light.v-label {
+    display: flex;
+    top: 0;
+    height: 100%;
+    align-items: center;
   }
 
   .v-tab {
