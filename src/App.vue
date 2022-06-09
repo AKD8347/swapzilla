@@ -1,8 +1,24 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <div class="fund-your-acc">
+      <div class="fund-your-acc__form">
+        <div class="fund-your-acc__navigation">
+          <v-tabs v-model="tab">
+            <v-tab>Deposit</v-tab>
+            <v-tab>Withdraw</v-tab>
+            <v-tab>Rebalance</v-tab>
+          </v-tabs>
+          <div class="fund-your-acc__exit"></div>
+        </div>
+
+        <transition name="slide-fade" mode="out-in" appear>
+          <deposit-tab v-if="tab === 0" />
+          <withdraw-tab v-if="tab === 1" />
+          <rebalance-tab v-if="tab === 2" />
+        </transition>
+      </div>
+    </div>
+  </v-app>
 </template>
 
 <script>
