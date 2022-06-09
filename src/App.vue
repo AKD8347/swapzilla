@@ -110,11 +110,13 @@ export default {
     top: 12px;
   }
 
-  .v-input.theme--light.v-text-field.errorCustom .v-text-field__slot::before {
+  .withdraw
+  .v-input.theme--light.v-text-field.errorCustom
+  .v-text-field__slot::before {
     background: #e92525;
   }
 
-  .withdrawCustom .v-text-field__slot::before {
+  .withdraw .withdrawСustom .v-text-field__slot::before {
     position: absolute;
     right: 9px;
     top: 10px;
@@ -132,6 +134,22 @@ export default {
     line-height: 16px;
 
     color: #ffffff;
+  }
+
+  .deposit .v-text-field--outlined .v-label--active,
+  .rebalance .v-text-field--outlined .v-label--active,
+  .withdraw .v-text-field--outlined .v-label--active {
+    display: none;
+  }
+
+  .rebalance
+  .v-text-field
+  > .v-input__control
+  > .v-input__slot
+  > .v-text-field__slot
+  .v-label--active,
+  .withdraw .v-text-field .v-label--active {
+    display: none;
   }
 
   .withdraw .withdrawСustom .v-messages__message {
