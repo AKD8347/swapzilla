@@ -22,12 +22,17 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import DepositTab from "@/components/tabs/Deposit"
+import WithdrawTab from "@/components/tabs/Withdraw"
+import RebalanceTab from "@/components/tabs/Rebalance"
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  name: "App",
+  components: { DepositTab, WithdrawTab, RebalanceTab },
+  data() {
+    return {
+      tab: 0
+    }
   }
 }
 </script>
