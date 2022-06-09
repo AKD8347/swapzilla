@@ -1,46 +1,46 @@
 <template>
   <div class="fund-your-acc__content withdraw">
     <v-select
-        v-model="value.chooseExchange"
-        icon="mdi-arrow-down-thick"
-        :items="items"
-        label="Choose exchange"
-        append-icon="expand_more"
-        menu-props="auto"
-        @change="onChooseExchange"
-        :error-messages="error.chooseExchange"
-        filled
-        outlined
+      v-model="value.chooseExchange"
+      icon="mdi-arrow-down-thick"
+      :items="items"
+      label="Choose exchange"
+      append-icon="expand_more"
+      menu-props="auto"
+      @change="onChooseExchange"
+      :error-messages="error.chooseExchange"
+      filled
+      outlined
     ></v-select>
     <v-select
-        v-model="value.chooseCurrency"
-        icon="mdi-arrow-down-thick"
-        :items="items"
-        label="Choose currency"
-        append-icon="expand_more"
-        menu-props="auto"
-        @change="onChooseCurrency"
-        :error-messages="error.chooseCurrency"
-        filled
-        outlined
+      v-model="value.chooseCurrency"
+      icon="mdi-arrow-down-thick"
+      :items="items"
+      label="Choose currency"
+      append-icon="expand_more"
+      menu-props="auto"
+      @change="onChooseCurrency"
+      :error-messages="error.chooseCurrency"
+      filled
+      outlined
     ></v-select>
     <v-text-field
-        v-model="value.withdrawAmount"
-        label="Withdraw amount"
-        class="withdrawСustom"
-        @input="onWithdrawAmount"
-        :error-messages="error.withdrawAmount"
-        :class="{ errorCustom: isErrorAmount }"
+      v-model="value.withdrawAmount"
+      label="Withdraw amount"
+      class="withdrawСustom"
+      @input="onWithdrawAmount"
+      :error-messages="error.withdrawAmount"
+      :class="{ errorCustom: isErrorAmount }"
     ></v-text-field>
     <v-btn color="primary" elevation="2" large @click="onWinthdraw"
-    >Withdraw</v-btn
+      >Withdraw</v-btn
     >
 
     <v-snackbar
-        info
-        v-model="snackbar"
-        color="deep-purple accent-4"
-        :timeout="2000"
+      info
+      v-model="snackbar"
+      color="deep-purple accent-4"
+      :timeout="2000"
     >
       {{ textSnackbar }}
     </v-snackbar>
@@ -77,8 +77,8 @@ export default {
     },
     onWithdrawAmount() {
       if (
-          this.value.withdrawAmount === "" ||
-          this.value.withdrawAmount >= 100
+        this.value.withdrawAmount === "" ||
+        this.value.withdrawAmount >= 100
       ) {
         this.isErrorAmount = true
         this.error.withdrawAmount = ["Fill in withdrawal amount"]
@@ -95,16 +95,16 @@ export default {
         this.error.chooseCurrency = ["Currency cannot be empty"]
       }
       if (
-          this.value.withdrawAmount === "" ||
-          this.value.withdrawAmount >= 100
+        this.value.withdrawAmount === "" ||
+        this.value.withdrawAmount >= 100
       ) {
         this.error.withdrawAmount = ["Fill in withdrawal amount"]
       }
 
       if (
-          this.error.chooseExchange.length === 0 &&
-          this.error.chooseCurrency.length === 0 &&
-          this.error.withdrawAmount.length === 0
+        this.error.chooseExchange.length === 0 &&
+        this.error.chooseCurrency.length === 0 &&
+        this.error.withdrawAmount.length === 0
       ) {
         this.snackbar = true
       }

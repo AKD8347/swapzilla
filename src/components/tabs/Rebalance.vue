@@ -2,32 +2,32 @@
   <div class="fund-your-acc__content rebalance">
     <v-subheader>From</v-subheader>
     <v-select
-        icon="mdi-arrow-down-thick"
-        :items="items"
-        label="Choose exchange"
-        append-icon="expand_more"
-        menu-props="auto"
-        filled
-        outlined
+      icon="mdi-arrow-down-thick"
+      :items="items"
+      label="Choose exchange"
+      append-icon="expand_more"
+      menu-props="auto"
+      filled
+      outlined
     ></v-select>
     <v-subheader>To</v-subheader>
     <v-select
-        icon="mdi-arrow-down-thick"
-        :items="items"
-        label="Choose exchange"
-        append-icon="expand_more"
-        menu-props="auto"
-        filled
-        outlined
+      icon="mdi-arrow-down-thick"
+      :items="items"
+      label="Choose exchange"
+      append-icon="expand_more"
+      menu-props="auto"
+      filled
+      outlined
     ></v-select>
     <v-select
-        icon="mdi-arrow-down-thick"
-        :items="items"
-        label="Choose currency"
-        append-icon="expand_more"
-        menu-props="auto"
-        filled
-        outlined
+      icon="mdi-arrow-down-thick"
+      :items="items"
+      label="Choose currency"
+      append-icon="expand_more"
+      menu-props="auto"
+      filled
+      outlined
     ></v-select>
     <v-text-field label="Amount on the balance"></v-text-field>
     <div class="rebalance__percent-block">
@@ -35,11 +35,11 @@
       <div class="rebalance__percent-wrap">
         <v-radio-group v-model="radioSelected" row>
           <v-radio
-              fluid
-              v-for="item in radioGroup"
-              :label="item.label"
-              :value="item.label"
-              :key="item.label"
+            fluid
+            v-for="item in radioGroup"
+            :label="item.label"
+            :value="item.label"
+            :key="item.label"
           ></v-radio>
         </v-radio-group>
       </div>
@@ -97,6 +97,7 @@ export default {
     font-weight: 400;
     font-size: 12px;
     line-height: 16px;
+
     color: #2a6591;
   }
 
@@ -136,5 +137,6 @@ export default {
   .v-input--radio-group.v-input--radio-group--row .v-radio {
     margin-right: 0;
   }
+
 }
 </style>

@@ -54,6 +54,7 @@ export default {
 
 .fund-your-acc {
   background: #7e7e7e;
+
   display: flex;
   flex: 1;
   padding: 20px;
@@ -106,6 +107,7 @@ export default {
     font-weight: 400;
     font-size: 12px;
     line-height: 16px;
+
     color: #3c484c;
     margin-bottom: 10px;
   }
@@ -115,8 +117,8 @@ export default {
   }
 
   .withdraw
-  .v-input.theme--light.v-text-field.errorCustom
-  .v-text-field__slot::before {
+    .v-input.theme--light.v-text-field.errorCustom
+    .v-text-field__slot::before {
     background: #e92525;
   }
 
@@ -127,8 +129,10 @@ export default {
     content: "max";
     padding: 7px 10px;
     padding-bottom: 9px;
+
     background: #9aa2a8;
     border-radius: 3px;
+
     font-family: "Open Sans";
     font-style: normal;
     font-weight: 700;
@@ -164,11 +168,11 @@ export default {
   }
 
   .rebalance
-  .v-text-field
-  > .v-input__control
-  > .v-input__slot
-  > .v-text-field__slot
-  .v-label--active,
+    .v-text-field
+    > .v-input__control
+    > .v-input__slot
+    > .v-text-field__slot
+    .v-label--active,
   .withdraw .v-text-field .v-label--active {
     display: none;
   }
@@ -196,8 +200,8 @@ export default {
   }
 
   .v-text-field.v-text-field--enclosed:not(.v-text-field--rounded)
-  > .v-input__control
-  > .v-input__slot,
+    > .v-input__control
+    > .v-input__slot,
   .v-text-field.v-text-field--enclosed .v-text-field__details {
     padding: 0px 18px;
   }
@@ -217,7 +221,9 @@ export default {
     font-weight: 400;
     font-size: 20px;
     line-height: 27px;
+
     text-transform: capitalize;
+    // padding-left: 0;
     justify-content: left;
     letter-spacing: 0.008286em !important;
   }
