@@ -97,7 +97,6 @@ export default {
     font-weight: 400;
     font-size: 12px;
     line-height: 16px;
-
     color: #2a6591;
   }
 
@@ -137,6 +136,5 @@ export default {
   .v-input--radio-group.v-input--radio-group--row .v-radio {
     margin-right: 0;
   }
-
 }
 </style>
